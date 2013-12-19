@@ -12,18 +12,22 @@ $( document ).ready(function() {
     });
     
     //handlers for login
-    $('#login').on('click', ' .login', function (evt){
+    $('#login').on('click', 'img.login', function (evt){
 	   evt.preventDefault();
 	   //TODO: load login modal dialog
 	   //if ok: set logged in and  Load all avaiable Dashboards by appending them to #content and show all avaible modules
-	   
+	   //set sessions
+	   //change button
     });
-    $('#login').on('click', ' .logout', function (evt){
+    $('#login').on('click', 'img.logout', function (evt){
 	   evt.preventDefault();
 	   $.session.clear();
 	   $('#navigation').find('li').hide();
-	   $("#login").find("img").removeClass("logout");
-	   $("#login").find("img").addClass("login");
+	   $("#login img").removeClass("logout");
+	   $("#login img").addClass("login");
+	   $("#login img").attr("src", "img/lock-unlock.png");
+	   $("#login img").attr("alt", "Login");
+	   $("#login img").attr("title", "Login");
 	   $('#content').text("You have been successfully logged out.");
     });
 });
