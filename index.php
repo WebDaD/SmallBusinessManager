@@ -24,13 +24,13 @@ mysql_close();
 		<script src="js/jquery.md5.min.js" type="text/javascript"></script>
 		<script src="js/functions.js" type="text/javascript"></script>
 		<?php foreach($modules as $mod): ?>
-			<script src="modules/<?php echo $mod["folder"]; ?>/functions.js" type="text/javascript"></script>
+			<script src="modules/<?php echo $mod["folder"]; ?>/functions.js" type="text/javascript" ></script>
 		<?php endforeach ?>
 	</head>
 	<body>
 		<div id="container">
 			<div id="login">
-				<img src="img/lock-unlock.png" class="login" alt="Login" title="Login"/>
+				<img src="img/lock.png" class="login" alt="Login" title="Login"/>
 			</div>
 		    <div id="head">
 		        <img alt="SmallBusinessManager" class="head_logo" src="img/head.png" />

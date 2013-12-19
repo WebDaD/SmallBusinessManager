@@ -6,7 +6,3 @@ $( document ).ready(function() {
 	//use http://jqueryui.com/dialog/#modal-form here
 	
 });
-
-function customers_dashboard(){
-	//Returns a nice dashboard item which is draggable <div class="dash">
-}

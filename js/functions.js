@@ -14,8 +14,8 @@ $( document ).ready(function() {
     //handlers for login
     $('#login').on('click', 'img.login', function (evt){
 	   evt.preventDefault();
-	   //TODO: load login modal dialog
-	   //if ok: set logged in and  Load all avaiable Dashboards by appending them to #content and show all avaible modules
+	   //TODO: load login modal dialog Login, pwd. -> Send login, md5(pwd) to php/login/login.php
+	   //if ok: set logged in and  Load all avaiable Dashboards (mod_folder/php/dashboard.php) by appending them to #content and show all avaible modules
 	   //set sessions
 	   //change button
     });
@@ -25,7 +25,7 @@ $( document ).ready(function() {
 	   $('#navigation').find('li').hide();
 	   $("#login img").removeClass("logout");
 	   $("#login img").addClass("login");
-	   $("#login img").attr("src", "img/lock-unlock.png");
+	   $("#login img").attr("src", "img/lock.png");
 	   $("#login img").attr("alt", "Login");
 	   $("#login img").attr("title", "Login");
 	   $('#content').text("You have been successfully logged out.");
