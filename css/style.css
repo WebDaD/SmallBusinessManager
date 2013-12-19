@@ -1,1 +1,22 @@
 @CHARSET "ISO-8859-1";
+
+body{left:0px; margin-left:0px; padding-left:0px; margin-right:0px; padding-right:0px; font-family: "Arial";}
+#container { width:100%; margin: 0 auto; height: 100%; background-image:url(../img/bg.png); background-repeat:repeat-x;}
+#head { left:0px; height: 159px; margin-bottom:2%; width: 100%; }
+#head .head_logo { width: 593px; left:0px; height: 159px; }
+#head #lbl_progname { z-index:999; position:absolute; top:20px; left:90px; color:blue; font-size:12pt; font-family: "Arial";}
+#head #lbl_customer { z-index:999; position:absolute; top:80px; left:180px; color:white; font-size:24pt; font-weight:bold; font-family: "Arial"; }
+#head #lbl_headline { z-index:999; position:absolute; top:110px; left:180px; color:white; font-size:24pt; font-weight:bold; font-family: "Arial";}
+
+#content_main { white-space: nowrap; }
+
+#navigation { width:15%; margin-left:15px; float:left; border-right: 1px solid #C0C0C0; margin-right:10px; }
+#navigation ul { list-style-type: none; padding: 0; padding-left:10px; margin-left: 0;}
+#navigation ul li { margin-bottom:10px;}
+#navigation ul li a { text-decoration: none; color:black;}
+#navigation ul li a:hover { color:red; }
+
+#content { display:block; height:75%; width:75%; left:205px; float:clear; float:none; overflow:auto !important; padding-left:10px; }
+
+#footer { position:absolute; right:1px; bottom:1px; color:gray; font-size: x-small; }
+	

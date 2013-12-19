@@ -12,6 +12,7 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 
 ## 1 (Alpha) YYYY-MM-DD:
 - [ ] Basic Framework
+- [ ] UserManagement (Database Only)
 - [ ] Module Customers
 
 ## 2 (Beta) YYYY-MM-DD:
@@ -24,6 +25,7 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 
 ## 3 (Pre-Release) YYYY-MM-DD:
 - [ ] Styling
+- [ ] Module UserManagement
 - [ ] More Modules
 - [ ] Module-REST Combined as global REST
 
@@ -44,3 +46,6 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 
 # Developers
 - D: @DSigmund
+
+# License
+GNU GPL v2 (see LICENSE)
