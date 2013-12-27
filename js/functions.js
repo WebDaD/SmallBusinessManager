@@ -5,11 +5,7 @@ $( document ).ready(function() {
 	//Hide all navigation
 	 $('#navigation').find('li').hide();
 	
-	//Handlers for Navigation
-    $('#navigation').on('click', ' .nav_button', function(evt) {
-        evt.preventDefault();
-        //TODO: load php file in $(this).data("link") using ajax into #content
-    });
+
     
     //handlers for login
     $('#login').on('click', 'img.login', function (evt){
