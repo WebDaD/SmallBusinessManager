@@ -13,6 +13,7 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 ## 1 (Alpha) YYYY-MM-DD:
 - [ ] Basic Framework
 - [ ] UserManagement (Database Only)
+- [ ] CompanyManagenent (Database Only)
 - [ ] ModuleManagement (Database Only)
 - [ ] Module Customers
 
@@ -28,12 +29,15 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 - [ ] Styling
 - [ ] Module UserManagement
 - [ ] Module ModuleManagement
-- [ ] More Modules
+- [ ] Module CompanyManagement
+- [ ] Module Tickets
+- [ ] Module Concepting
 - [ ] Module-REST Combined as global REST
 - [ ] Graphing using pGraph or jGraph
 
 ## 4 (Release) YYYY-MM-DD:
-- [ ] To be Defined
+- [ ] Connect to Google Drive (Save Data, Open Data)
+- [ ] Customer REST Linking (Create Access (pwd, email)
 
 # Done
 
@@ -51,8 +55,8 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 - Fill
 
 ## Module Customers
-- Basic Dashboard
-- Table
+- Basic Dashboard DEF
+- Table DEF
 
 # Developers
 - D: @DSigmund
