@@ -18,6 +18,7 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 - [ ] Module Customers
 
 ## 2 (Beta) YYYY-MM-DD:
+- [ ] SubModule Projects
 - [ ] Module Accounting
 - [ ] Module Products
 - [ ] Module Contracts
@@ -48,15 +49,91 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 ## Basic Framework
 - Fill
 
-## UserManagement
+## Module CompanyManagement
+For SBM being a WebApp, multiple companies may use it.
+So there will be a Table for companies and every DATA-Table will hold a Link to the company_id.
+
+Table:
+t_companies: ID | NAME | LOGO | HOMEPAGE | MAIL | MAIN_USER
+
+Forms:
+None.
+
+A Company will be created if a User registers for no company.
+
+## Module UserManagement
 - Fill
 
-## ModuleManagement
+## Module ModuleManagement
 - Fill
 
 ## Module Customers
+This Module shows customer data and allows for editing, inserting and deleting.
+Customer Data is:
+- id
+- name
+- street & number
+- plz
+- city
+- mail
+- phone
+- contact 
+
+Table:
+t_customers: COMPANY_ID(P) | ID(P) | NAME | STREET_NUMBER | PLZ | CITY | MAIL | PHONE | CONTACT
+
+Forms:
+Table with Data and Buttons for Details, Edit, New, Delete
+
+Dashboard:
+Number of Customers
+
+
+### SubModule Projects
 - Basic Dashboard DEF
 - Table DEF
+
+## Module Accounting
+- Basic Dashboard DEF
+- Table DEF
+
+## Module Products
+- Basic Dashboard DEF
+- Table DEF
+
+## Module Contracts
+- Basic Dashboard DEF
+- Table DEF
+
+### SubModule Billing
+- Basic Dashboard DEF
+- Table DEF
+
+### SubModule CostEstimating
+- Basic Dashboard DEF
+- Table DEF
+
+## Module Tickets
+- Basic Dashboard DEF
+- Table DEF
+
+## Module Concepting
+- Basic Dashboard DEF
+- Table DEF
+
+# REST
+information about REST
+
+## Admin REST
+
+# Export
+Export Options
+
+## Drive
+To Drive as .sbm
+
+## PDF
+Print Information 
 
 # Developers
 - D: @DSigmund
