@@ -97,16 +97,47 @@ Number of Customers
 
 
 ### SubModule Projects
-- Basic Dashboard DEF
-- Table DEF
+Every Customer has at least one Project, the one making him a customer.
+But the same customer may have many Projects.
+This Module deals with this Problem.
+
+Table:
+t_projects: COMPANY_ID(P) | ID(P) | NAME | DESCRIPTION | DUE_DATE | STATE
+customer_has_project: CUSTOMER_ID(P) | PROJECT_ID(P)
+
+Forms:
+Table with Projects for Customer CRUD
+
+Dashboard:
+Open Projects for all Customers (State not Closed)
 
 ## Module Accounting
-- Basic Dashboard DEF
-- Table DEF
+This Module enables us to track expenses and income.
+Also there is exporting for taxes, etc...
+
+Table:
+t_accounting: COMPANY_ID(P) | ID(P) | BOOK_DATE | VALUE | DESCRIPTION
+
+Forms:
+CRUD on Table
+
+Dashboard:
+Actual Money
 
 ## Module Products
-- Basic Dashboard DEF
-- Table DEF
+This Module has the Products the Company can offer.
+They are sorted in groups.
+
+Table:
+t_products: COMPANY_ID(P) | ID(P) | NAME | COST | COST_TYPE | DESCRIPTION | GROUP_ID
+t_products_groups: COMPANY_ID(P) | ID(P) | NAME | DESCRIPTION
+
+Forms:
+CRUD on table
+CRUD on groups
+
+Dashboard:
+Number of Products and Groups "# Products in # Groups"
 
 ## Module Contracts
 - Basic Dashboard DEF
