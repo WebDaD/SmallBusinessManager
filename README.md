@@ -14,7 +14,6 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 - [ ] Basic Framework
 - [ ] UserManagement (Database Only)
 - [ ] CompanyManagenent (Database Only)
-- [ ] ModuleManagement (Database Only)
 - [ ] Module Customers
 
 ## 2 (Beta) YYYY-MM-DD:
@@ -29,7 +28,6 @@ Manage your Business Needs on a simple WebSite. May Contain REST
 ## 3 (Pre-Release) YYYY-MM-DD:
 - [ ] Styling
 - [ ] Module UserManagement
-- [ ] Module ModuleManagement
 - [ ] Module CompanyManagement
 - [ ] Module Tickets
 - [ ] Module Concepting
@@ -54,18 +52,25 @@ For SBM being a WebApp, multiple companies may use it.
 So there will be a Table for companies and every DATA-Table will hold a Link to the company_id.
 
 Table:
-t_companies: ID | NAME | LOGO | HOMEPAGE | MAIL | MAIN_USER
+t_companies: ID(P) | NAME | LOGO | HOMEPAGE | MAIL | MAIN_USER
 
 Forms:
-None.
+Edit my Company Data.
 
 A Company will be created if a User registers for no company.
 
 ## Module UserManagement
-- Fill
+Everyone working with the WebApp must login as a User or register.
+On registering you may create a new company or sign up to one. Then the main_user must accept you.
 
-## Module ModuleManagement
-- Fill
+Table:
+t_user: COMPANY_ID(P) | ID(P) | NAME | VORNAME | LOGIN | MAIL | PWD
+
+Forms:
+Edit my Data.
+Accept User for Company.
+Delete Me.
+Login/Logout.
 
 ## Module Customers
 This Module shows customer data and allows for editing, inserting and deleting.
@@ -78,12 +83,14 @@ Customer Data is:
 - mail
 - phone
 - contact 
+- password
 
 Table:
-t_customers: COMPANY_ID(P) | ID(P) | NAME | STREET_NUMBER | PLZ | CITY | MAIL | PHONE | CONTACT
+t_customers: COMPANY_ID(P) | ID(P) | NAME | STREET_NUMBER | PLZ | CITY | MAIL | PHONE | CONTACT | PWD(md5)
 
 Forms:
 Table with Data and Buttons for Details, Edit, New, Delete
+A Password can be created and will be sent to the customer, allowing him to checkup on his Data.
 
 Dashboard:
 Number of Customers
