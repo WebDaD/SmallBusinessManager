@@ -40,6 +40,7 @@ Manage your Business Needs on a simple WebSite. May Contain REST for Admins and 
 
 ## 5 (v2) YYYY-MM-DD:
 - [ ] Connect to Google Drive (Save Data, Open Data)
+- [ ] Login via Google
 
 # Changelog
 
