@@ -9,5 +9,5 @@ $( document ).ready(function() {
 //Handlers for Navigation
 $('#navigation').on('click', ' #mod_customers', function(evt) {
     evt.preventDefault();
-    //TODO: load php file listCustomers.php using ajax into #content
+    //TODO: load php file listCustomers.php using ajax into #content. display a spinner beforehand
 });

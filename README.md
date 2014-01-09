@@ -1,6 +1,7 @@
 # SmallBusinessManager
 
 Manage your Business Needs on a simple WebSite. May Contain REST for Admins and Customers!
+It depends heavily on jquery and its modules
 
 # Legende
 - + = Added
@@ -34,13 +35,16 @@ Manage your Business Needs on a simple WebSite. May Contain REST for Admins and 
 - [ ] Module Concepting
 - [ ] Module-REST Combined as global REST
 - [ ] Graphing using pGraph or jGraph
+- [ ] robots.txt
 
 ## 4 (Release) YYYY-MM-DD:
 - [ ] Customer REST Linking (Create Access (pwd, email)
+- [ ] .htaccess Mod_Rewrite to allow nice RESTing
 
 ## 5 (v2) YYYY-MM-DD:
 - [ ] Connect to Google Drive (Save Data, Open Data)
 - [ ] Login via Google
+- [ ] Extend REST to be fully CRUD
 
 # Changelog
 
@@ -52,7 +56,7 @@ Manage your Business Needs on a simple WebSite. May Contain REST for Admins and 
 ## Basic Framework
 The Basic Framework allows for Loading of the Module via JavaScript.
 It loads all Modules into the navigation and includes the javascript-files.
-It also Displays the Dashboard.
+It also Displays the Dashboard, which is a sortable Grid (http://jqueryui.com/sortable/#display-grid)
 
 Table:
 t_modules: ID(P) | NAME | NAV_NAME | FOLDER | VERSION
@@ -241,7 +245,7 @@ Dashboard:
 
 # REST
 The REST is modular.
-To ensure only a valid user may see the data of his company only it uses HTTP Authentification
+To ensure only a valid user may see the data of his company only it uses HTTP Authentification.
 Based on the login, the company_id will be used to filter results
 Base Object is URL/REST/
 After that, every module is an object, e.g. URL/REST/bills
