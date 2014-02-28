@@ -3,6 +3,11 @@
 Manage your Business Needs on a simple WebSite. May Contain REST for Admins and Customers!
 It depends heavily on jquery and its modules
 
+# Installation
+
+Here is how to install the tool localy
+Also the Embed-iframe thingy here
+
 # Legende
 - + = Added
 - - = Removed
@@ -40,6 +45,7 @@ It depends heavily on jquery and its modules
 ## 4 (Release) YYYY-MM-DD:
 - [ ] Customer REST Linking (Create Access (pwd, email)
 - [ ] .htaccess Mod_Rewrite to allow nice RESTing
+- [ ] installation scripts
 
 ## 5 (v2) YYYY-MM-DD:
 - [ ] Connect to Google Drive (Save Data, Open Data)
@@ -57,16 +63,20 @@ It depends heavily on jquery and its modules
 The Basic Framework allows for Loading of the Module via JavaScript.
 It loads all Modules into the navigation and includes the javascript-files.
 It also Displays the Dashboard, which is a sortable Grid (http://jqueryui.com/sortable/#display-grid)
+It Handles the Login, which will use tables company and user. These two tables are always there (used by every tool)
+And it will display the possible embed info (iframe).
+Variable GET for index.php may be company (then embed). Only try to login for this company.
+It is multilanguagable!
 
 Table:
-t_modules: ID(P) | NAME | NAV_NAME | FOLDER | VERSION
+sbm_t_modules: ID(P) | NAME | NAV_NAME | FOLDER | VERSION
 
 ## Module CompanyManagement
 For SBM being a WebApp, multiple companies may use it.
 So there will be a Table for companies and every DATA-Table will hold a Link to the company_id.
 
 Table:
-t_companies: ID(P) | NAME | LOGO | HOMEPAGE | MAIL | MAIN_USER
+webdad_t_companies: ID(P) | NAME | LOGO | HOMEPAGE | MAIL | MAIN_USER
 
 Forms:
 Edit my Company Data.
@@ -78,7 +88,7 @@ Everyone working with the WebApp must login as a User or register.
 On registering you may create a new company or sign up to one. Then the main_user must accept you.
 
 Table:
-t_user: COMPANY_ID | ID(P) | NAME | VORNAME | LOGIN | MAIL | PWD
+webdad_t_user: COMPANY_ID | ID(P) | NAME | VORNAME | LOGIN | MAIL | PWD
 
 Forms:
 Edit my Data.
@@ -100,7 +110,7 @@ Customer Data is:
 - password
 
 Table:
-t_customers: COMPANY_ID | ID(P) | NAME | STREET_NUMBER | PLZ | CITY | MAIL | PHONE | CONTACT | PWD(md5)
+sbm_t_customers: COMPANY_ID | ID(P) | NAME | STREET_NUMBER | PLZ | CITY | MAIL | PHONE | CONTACT | PWD(md5) | CUSTOMER_ID(for internal)
 
 Forms:
 Table with Data and Buttons for Details, Edit, New, Delete
@@ -116,8 +126,8 @@ But the same customer may have many Projects.
 This Module deals with this Problem.
 
 Table:
-t_projects: COMPANY_ID | ID(P) | NAME | DESCRIPTION | DUE_DATE | STATE
-customer_has_project: CUSTOMER_ID | PROJECT_ID(P)
+sbm_t_projects: COMPANY_ID | ID(P) | NAME | DESCRIPTION | DUE_DATE | STATE
+sbm_customer_has_project: CUSTOMER_ID | PROJECT_ID(P)
 
 Forms:
 Table with Projects for Customer CRUD
@@ -130,7 +140,7 @@ This Module enables us to track expenses and income.
 Also there is exporting for taxes, etc...
 
 Table:
-t_accounting: COMPANY_ID | ID(P) | BOOK_DATE | VALUE | DESCRIPTION
+sbm_t_accounting: COMPANY_ID | ID(P) | BOOK_DATE | VALUE | DESCRIPTION
 
 Forms:
 CRUD on Table
@@ -143,8 +153,8 @@ This Module has the Products the Company can offer.
 They are sorted in groups.
 
 Table:
-t_products: COMPANY_ID | ID(P) | NAME | COST | COST_TYPE | DESCRIPTION | GROUP_ID
-t_products_groups: COMPANY_ID | ID(P) | NAME | DESCRIPTION
+sbm_t_products: COMPANY_ID | ID(P) | NAME | COST | COST_TYPE | DESCRIPTION | GROUP_ID
+sbm_t_products_groups: COMPANY_ID | ID(P) | NAME | DESCRIPTION
 
 Forms:
 CRUD on table
@@ -160,8 +170,8 @@ Standing Alone, only generic contracts like support or Terms & Conditions are po
 Everything else will be handled by specialicied submodules.
 
 Table:
-t_contracts: COMPANY_ID | ID(P) | NAME | DESCRIPTION
-t_contract_clauses : COMPANY_ID | ID(P) | HEADLINE | DESCRIPTION | ORDER | CONTRACT_ID
+sbm_t_contracts: COMPANY_ID | ID(P) | NAME | DESCRIPTION
+sbm_t_contract_clauses : COMPANY_ID | ID(P) | HEADLINE | DESCRIPTION | ORDER | CONTRACT_ID
 
 Forms:
 CRUD all Contracts
@@ -174,8 +184,8 @@ Number of Clauses in Contracts
 This Submodule allows to create a costestimate for a project of a customer, using the products you defined.
 
 Table:
-t_costestimate: COMPANY_ID | ID(P) | PROJECT_ID | DESCRIPTION | DISCOUNT
-t_costestimate_items: COMPANY_ID | ID(P) | PRODUCT_ID | AMOUNT
+sbm_t_costestimate: COMPANY_ID | ID(P) | PROJECT_ID | DESCRIPTION | DISCOUNT
+sbm_t_costestimate_items: COMPANY_ID | ID(P) | PRODUCT_ID | AMOUNT
 
 Forms:
 CRUD on costestimate
@@ -189,8 +199,8 @@ This Module allows to create a Bill to send to a customer.
 It also Includes creating a bill from a costestimate.
 
 Table:
-t_bills: COMPANY_ID | ID(P) | PROJECT_ID | DESCRIPTION | DISCOUNT
-t_bills_items: COMPANY_ID | ID(P) | PRODUCT_ID | AMOUNT
+sbm_t_bills: COMPANY_ID | ID(P) | PROJECT_ID | DESCRIPTION | DISCOUNT
+sbm_t_bills_items: COMPANY_ID | ID(P) | PRODUCT_ID | AMOUNT
 
 Forms:
 CRUD on bills
@@ -205,8 +215,8 @@ This Module allows to create a SalesContract for a Customer-Project.
 You Just Define deadlines and link a costestimate
 
 Table:
-t_salescontracts: COMPANY_ID | ID(P) | PROJECT_ID | DESCRIPTION | COSTESTIMATE_ID
-t_salescontracts_deadlines: COMPANY_ID | ID(P) | NAME | DEADLINE
+sbm_t_salescontracts: COMPANY_ID | ID(P) | PROJECT_ID | DESCRIPTION | COSTESTIMATE_ID
+sbm_t_salescontracts_deadlines: COMPANY_ID | ID(P) | NAME | DEADLINE
 
 Forms:
 CRUD on salescontract + Adding Deadlines
@@ -220,8 +230,8 @@ A Module for the Customers to create Tickets in case of Errors or Bugs in a Proj
 The Admin can add Information or send it to another user of the company.
 
 Table:
-t_tickets: COMPANY_ID | ID(P) | TITLE | DESCRIPTION | STATE | PROJECT_ID | WORKER_ID
-t_tickets_information: COMPANY_ID | ID(P) | TITLE | DESCRIPTION | SENDER_ID | INFO_TYPE
+sbm_t_tickets: COMPANY_ID | ID(P) | TITLE | DESCRIPTION | STATE | PROJECT_ID | WORKER_ID
+sbm_t_tickets_information: COMPANY_ID | ID(P) | TITLE | DESCRIPTION | SENDER_ID | INFO_TYPE
 
 Forms:
 Customer create Ticket
